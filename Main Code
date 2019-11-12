@@ -1,0 +1,122 @@
+from tkinter import *
+from tkinter import messagebox
+from tkcalendar import DateEntry
+
+window = Tk()
+window.geometry("1200x900")
+window.title("F.I.R")
+
+sttn2=StringVar()
+dist2=StringVar()
+name2=StringVar()
+fname2=StringVar()
+add2=StringVar()
+ph2=StringVar()
+email2=StringVar()
+dista2=StringVar()
+dire2=StringVar()
+time2=StringVar()
+no2=StringVar()
+pp2=StringVar()
+
+def printt():
+    sttn1=sttn2.get()
+    dist1=dist2.get()
+    name1=name2.get()
+    fname1=fname2.get()
+    add1=add2.get()
+    ph1=ph2.get()
+    email1=email2.get()
+    dista1=dista2.get()
+    dire1=dire2.get()
+    time1=time2.get()
+    no1=no2.get()
+    pp1=pp2.get()
+    #EDIT VALUES ACCORDINGLY FOR PRINTING THE SUBMITTED VALUES IN FORM
+    print(f" Name of Police Station :{sttn1}    District : {dist1} / About the informant / Name - {name1} / Father/Husband name - {fname1} / Address - {add1} / Phone - {ph1} / Email - {email1} {dista1} {dire1} {time1} {no1} {pp1}")
+
+h1=Label(window,text=" Proforma for Reporting the First Information (FIR)  ",font=("arial",15,"bold")).pack()
+police_station=Label(window,text="Police Station : ",font=("arial",15,"bold"))
+police_station.place(x=5,y=50)
+e1=Entry(window,textvar=sttn2)
+e1.place(x=170,y=55)
+
+district=Label(window,text="District :",font=("arial",15,"bold"))
+district.place(x=750,y=50)
+e2=Entry(window,textvar=dist2)
+e2.place(x=855,y=55)
+
+
+h2=Label(window,text="1.Personal details of the Complaint/Informant : ",font=("arial",15,"bold"))
+h2.place(x=5,y=100)
+
+name=Label(window,text="Name : ",font=("arial",15,"bold"))
+name.place(x=55,y=150)
+e3=Entry(window,textvar=name2,width="50")
+e3.place(x=160,y=155)
+
+fname=Label(window,text="Father/Husband Name : ",font=("arial",15,"bold"))
+fname.place(x=55,y=200)
+e4=Entry(window,textvar=fname2,width="50")
+e4.place(x=300,y=205)
+
+add=Label(window,text="Address : ",font=("arial",15,"bold"))
+add.place(x=55,y=250)
+e5=Entry(window,textvar=add2,width="50")
+e5.place(x=160,y=255)
+
+ph=Label(window,text="Phone : ",font=("arial",15,"bold"))
+ph.place(x=55,y=300)
+e6=Entry(window,textvar=ph2,width="50")
+e6.place(x=160,y=305)
+
+email=Label(window,text="Email : ",font=("arial",15,"bold"))
+email.place(x=55,y=350)
+e7=Entry(window,textvar=email2,width="50")
+e7.place(x=160,y=355)
+
+h3=Label(window,text="2.Place of occurrence : ",font=("arial",15,"bold"))
+h3.place(x=5,y=400)
+
+distance=Label(window,text="Distance from station : ",font=("arial",15,"bold"))
+distance.place(x=55,y=450)
+e8=Entry(window,textvar=dista2,width="50")
+e8.place(x=300,y=455)
+
+direction=Label(window,text="Direction from station : ",font=("arial",15,"bold"))
+direction.place(x=55,y=500)
+e9=Entry(window,textvar=dire2,width="50")
+e9.place(x=300,y=505)
+
+h4=Label(window,text="3.Date and Hour of occurrence : ",font=("arial",15,"bold"))
+h4.place(x=5,y=555)
+
+date=Label(window,text="Date : ",font=("arial",15,"bold"))
+date.place(x=55,y=605)
+cal = DateEntry(window, width="20", year=2019, month=6, day=22, 
+background='darkblue', foreground='white', borderwidth=2)
+cal.place(x=150, y=610)
+
+time=Label(window,text="Time : ",font=("arial",15,"bold"))
+time.place(x=350,y=605)
+e10=Entry(window,textvar=time2,width="50")
+e10.insert(0,"Enter Value in Military Format ")
+e10.place(x=450,y=610)
+
+h5=Label(window,text="4.Offence : ",font=("arial",15,"bold"))
+h5.place(x=5,y=665)
+
+no=Label(window,text="Nature of the offence : ",font=("arial",15,"bold"))
+no.place(x=55,y=715)
+e11=Entry(window,textvar=no2,width="50")
+e11.place(x=300,y=720)
+
+pp=Label(window,text="Particulars of the property(if stolen) : ",font=("arial",15,"bold"))
+pp.place(x=55,y=765)
+e12=Entry(window,textvar=pp2,width="50")
+e12.place(x=440,y=770)
+
+button1=Button(window,text="Submit",fg="white",bg="red",relief=RIDGE,font=("arial",15),command=printt)
+button1.place(x=450,y=790)
+
+window.mainloop()
